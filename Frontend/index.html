@@ -241,7 +241,7 @@
             sortBy.addEventListener('change', renderTools);
 
             try {
-                const response = await fetch('http://localhost:3000/api/tools');
+                const response = await fetch('https://sakisaki-bloom-backend.onrender.com/api/tools');
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
