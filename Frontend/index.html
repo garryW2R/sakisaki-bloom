@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakisaki Bloom - Simple AI Tools for Daily Life</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-main: #f4f7f6;
+            --bg-card: #ffffff;
+            --bg-filters: #ffffff;
+            --border-color: #e0e0e0;
+            --text-primary: #1a1a1a;
+            --text-secondary: #555555;
+            --accent-blue: #007aff;
+            --color-featured: #ff9500;
+            
+            --tag-writing: #007aff;
+            --tag-organizing: #34c759;
+            --tag-planning: #ff9500;
+            --tag-creating: #af52de;
+            --tag-audio: #5856d6;
+            --tag-coders: #8e8e93;
+            --tag-price: #8e8e93;
+        }
+
+        body { 
+            font-family: 'Inter', sans-serif; 
+            margin: 0; 
+            padding: 0;
+            background-color: var(--bg-main); 
+            color: var(--text-primary); 
+        }
+
+        .container { 
+            max-width: 900px; 
+            margin: 0 auto; 
+            background-color: transparent;
+            padding: 20px; 
+            padding-bottom: 60px;
+            border-radius: 0; 
+            border: none; 
+            box-shadow: none; 
+        }
+
+        h1 { 
+            border-bottom: 2px solid var(--border-color); 
+            padding-bottom: 10px; 
+            color: var(--text-primary); 
+        }
+        
+        .filter-section { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-bottom: 25px; padding: 20px; background-color: var(--bg-filters); border-radius: 12px; border: 1px solid var(--border-color); }
+        .filter-group { display: flex; flex-direction: column; }
+        label { font-weight: 600; margin-bottom: 8px; font-size: 0.9em; color: var(--text-secondary); }
+        select, input[type="text"] { padding: 12px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 1em; box-sizing: border-box; background-color: #fdfdfd; color: var(--text-primary); -webkit-appearance: none; appearance: none; background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23888888%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'); background-repeat: no-repeat; background-position: right 12px top 50%; background-size: .65em auto; }
+        .search-group { grid-column: 1 / -1; }
+        #tool-list { list-style-type: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
+        .tool-item { background: var(--bg-card); border: 1px solid var(--border-color); padding: 20px; margin-bottom: 0; border-radius: 12px; transition: all 0.2s ease-in-out; display: flex; flex-direction: column; box-shadow: 0 4px 12px rgba(0,0,0,0.05); position: relative; overflow: hidden; }
+        .tool-item:hover { border-color: #c0c0c0; transform: translateY(-3px); box-shadow: 0 6px 16px rgba(0,0,0,0.08); }
+        .featured-badge { position: absolute; top: 10px; right: -30px; background-color: var(--color-featured); color: white; padding: 4px 30px; font-size: 0.8em; font-weight: 600; transform: rotate(45deg); box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+        .tool-item.is-featured { border-color: var(--color-featured); box-shadow: 0 6px 20px rgba(255, 149, 0, 0.2); }
+        .tool-item.is-featured:hover { border-color: #e68a00; }
+        .tool-link { text-decoration: none; color: inherit; display: flex; flex-direction: column; height: 100%; }
+        .tool-header { display: flex; align-items: center; margin-bottom: 12px; }
+        .tool-icon { width: 36px; height: 36px; border-radius: 8px; margin-right: 12px; background-color: #ffffff; border: 1px solid var(--border-color); }
+        .tool-item h3 { margin: 0; color: var(--accent-blue); }
+        .tool-item p { margin: 0; font-size: 0.95em; color: var(--text-secondary); line-height: 1.6; flex-grow: 1; }
+        .tags { margin-top: 15px; }
+        .tag { display: inline-block; color: #ffffff; padding: 5px 10px; border-radius: 5px; font-size: 0.8em; font-weight: 600; margin-right: 8px; text-transform: capitalize; }
+        .tag-writing-emails { background-color: var(--tag-writing); }
+        .tag-organizing-my-life { background-color: var(--tag-organizing); }
+        .tag-planning-ideas { background-color: var(--tag-planning); }
+        .tag-creating-images-art { background-color: var(--tag-creating); }
+        .tag-audio-video { background-color: var(--tag-audio); }
+        .tag-for-coders { background-color: var(--tag-coders); }
+        .tag-price { background-color: #f0f0f0; color: #555; border: 1px solid #ddd; }
+        
+        .footer {
+            width: 100%;
+            padding: 30px 0;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            background-color: var(--bg-card);
+            margin-top: 40px;
+        }
+        .footer-content {
+            max-width: 900px;
+            margin: 0 auto;
+            color: var(--text-secondary);
+            font-size: 0.9em;
+        }
+        .footer-content a {
+            font-weight: 600;
+            color: var(--accent-blue);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .footer-content a:hover {
+            text-decoration: underline;
+        }
+        .footer-content p {
+            margin: 0 0 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Sakisaki Bloom 🌱</h1>
+        
+        <div class="filter-section">
+            <div class="filter-group search-group">
+                <label for="search-filter">Search for a tool</label>
+                <input type="text" id="search-filter" placeholder="e.g., 'email', 'planner', 'logo'...">
+            </div>
+            <div class="filter-group">
+                <label for="task-filter">What do you need help with?</label>
+                <select id="task-filter">
+                    <option value="all">Show All</option>
+                    <option value="Writing & Emails">Writing & Emails</option>
+                    <option value="Organizing My Life">Organizing My Life</option>
+                    <option value="Planning & Ideas">Planning & Ideas</option>
+                    <option value="Creating Images & Art">Creating Images & Art</option>
+                    <option value="Audio & Video">Audio & Video</option>
+                    <option value="For Coders">For Coders</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="price-filter">What's your budget?</label>
+                <select id="price-filter">
+                    <option value="all">Show All</option>
+                    <option value="Free">Free</option>
+                    <option value="Free to Start">Free to Start</option>
+                    <option value="Paid">Paid</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="sort-by">Sort By</label>
+                <select id="sort-by">
+                    <option value="featured">Featured</option>
+                    <option value="pop-high">Most Popular</option>
+                    <option value="ease-begin">Easiest to Use</option>
+                    <option value="name-az">Name: A-Z</option>
+                    <option value="name-za">Name: Z-A</option>
+                </select>
+            </div>
+        </div>
+        <ul id="tool-list">
+            </ul>
+        
+    </div> <footer class="footer">
+        <div class="footer-content">
+            <p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeZaf1pzP6hRdwRuuxGEmDlgKroENaOu8poj_7ANmqEd4iNTw/viewform?usp=sharing&ouid=103955078924409255539" target="_blank" rel="noopener noreferrer">Suggest a Tool</a>
+            </p>
+            <p>© 2025 Sakisaki Bloom 🌱</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            
+            const taskFilter = document.getElementById('task-filter');
+            const priceFilter = document.getElementById('price-filter');
+            const searchFilter = document.getElementById('search-filter'); 
+            const sortBy = document.getElementById('sort-by');
+            const toolList = document.getElementById('tool-list');
+            let allTools = [];
+
+            function createSafeClassName(text) {
+                return text.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-').replace(/[^a-z0-9-]/g, '');
+            }
+
+            function renderTools() {
+                
+                const selectedTask = taskFilter.value;
+                const selectedPrice = priceFilter.value;
+                const searchTerm = searchFilter.value.trim().toLowerCase(); 
+                const sortValue = sortBy.value;
+
+                toolList.innerHTML = '';
+
+                let filteredTools = allTools.filter(tool => {
+                    const taskMatch = (selectedTask === 'all' || tool.taskCategory === selectedTask);
+                    const priceMatch = (selectedPrice === 'all' || tool.price === selectedPrice);
+                    const nameMatch = tool.name.toLowerCase().includes(searchTerm);
+                    const descriptionMatch = tool.description.toLowerCase().includes(searchTerm);
+                    const searchMatch = nameMatch || descriptionMatch; 
+                    return taskMatch && priceMatch && searchMatch; 
+                });
+                
+                if (sortValue === 'featured') {
+                    filteredTools.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
+                } else if (sortValue === 'name-az') {
+                    filteredTools.sort((a, b) => a.name.localeCompare(b.name));
+                } else if (sortValue === 'name-za') {
+                    filteredTools.sort((a, b) => b.name.localeCompare(a.name));
+                } else if (sortValue === 'pop-high') {
+                    filteredTools.sort((a, b) => b.popularity - a.popularity);
+                } else if (sortValue === 'ease-begin') {
+                    const easeRank = (ease) => {
+                        if (ease === 'Beginner') return 1;
+                        if (ease === 'Intermediate') return 2;
+                        return 3;
+                    };
+                    filteredTools.sort((a, b) => easeRank(a.easeOfUse) - easeRank(b.easeOfUse));
+                }
+
+                filteredTools.forEach(tool => {
+                    const li = document.createElement('li');
+                    li.className = tool.featured ? 'tool-item is-featured' : 'tool-item'; 
+                    const taskTagClass = `tag-${createSafeClassName(tool.taskCategory)}`;
+                    const priceTagClass = `tag-price`;
+                    const featuredBadge = tool.featured ? '<div class="featured-badge">Featured</div>' : '';
+                    li.innerHTML = `
+                        ${featuredBadge}
+                        <a href="${tool.website}" target="_blank" rel="noopener noreferrer" class="tool-link">
+                            <div class="tool-header">
+                                <img src="${tool.icon}" alt="${tool.name} logo" class="tool-icon">
+                                <h3>${tool.name}</h3>
+                            </div>
+                            <p>${tool.description}</p>
+                            <div class="tags">
+                                <span class="tag ${taskTagClass}">${tool.taskCategory}</span>
+                                <span class="tag ${priceTagClass}">${tool.price}</span>
+                            </div>
+                        </a>
+                    `;
+                    toolList.appendChild(li);
+                });
+            }
+
+            taskFilter.addEventListener('change', renderTools);
+            priceFilter.addEventListener('change', renderTools);
+            searchFilter.addEventListener('input', renderTools);
+            sortBy.addEventListener('change', renderTools);
+
+            try {
+                const response = await fetch('http://localhost:3000/api/tools');
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                allTools = await response.json();
+                renderTools();
+                
+            } catch (error) {
+                console.error('Failed to fetch models from API:', error);
+                toolList.innerHTML = '<li>Error loading tools. Check if the backend server is running.</li>';
+            }
+        });
+    </script>
+</body>
+</html>

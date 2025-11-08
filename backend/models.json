@@ -1,0 +1,90 @@
+[
+  {
+    "name": "ChatGPT",
+    "taskCategory": "Writing & Emails",
+    "price": "Free to Start",
+    "description": "Your all-purpose helper. Ask it for recipes, to draft a tough email to a client, or to plan a week's worth of family meals.",
+    "icon": "https://logo.clearbit.com/openai.com",
+    "website": "https://chat.openai.com",
+    "easeOfUse": "Beginner",
+    "popularity": 99,
+    "featured": true
+  },
+  {
+    "name": "Canva",
+    "taskCategory": "Creating Images & Art",
+    "price": "Free to Start",
+    "description": "Design anything, fast. Create social media posts, birthday invitations, or business flyers using thousands of easy-to-use templates.",
+    "icon": "https://logo.clearbit.com/canva.com",
+    "website": "https://www.canva.com",
+    "easeOfUse": "Beginner",
+    "popularity": 98,
+    "featured": true
+  },
+  {
+    "name": "Todoist",
+    "taskCategory": "Organizing My Life",
+    "price": "Free to Start",
+    "description": "A simple to-do list to organize your life and work. Great for managing family shopping lists, work projects, or planning your day.",
+    "icon": "https://logo.clearbit.com/todoist.com",
+    "website": "https://www.todoist.com",
+    "easeOfUse": "Beginner",
+    "popularity": 90,
+    "featured": false
+  },
+  {
+    "name": "Midjourney",
+    "taskCategory": "Creating Images & Art",
+    "price": "Paid",
+    "description": "Create stunning, artistic, and photorealistic images just by describing what you want. Best for high-quality creative projects.",
+    "icon": "https://logo.clearbit.com/midjourney.com",
+    "website": "https://www.midjourney.com",
+    "easeOfUse": "Intermediate",
+    "popularity": 95,
+    "featured": false
+  },
+  {
+    "name": "Perplexity AI",
+    "taskCategory": "Planning & Ideas",
+    "price": "Free to Start",
+    "description": "An 'answer engine' that's great for research. Use it to find the best local parks or get a summary of a topic with cited sources.",
+    "icon": "https://logo.clearbit.com/perplexity.ai",
+    "website": "https://www.perplexity.ai",
+    "easeOfUse": "Beginner",
+    "popularity": 93,
+    "featured": false
+  },
+  {
+    "name": "Claude",
+    "taskCategory": "Writing & Emails",
+    "price": "Free to Start",
+    "description": "A friendly AI assistant that is great at creative writing and summarizing long documents, like legal contracts or school articles.",
+    "icon": "https://logo.clearbit.com/anthropic.com",
+    "website": "https://www.claude.ai",
+    "easeOfUse": "Beginner",
+    "popularity": 92,
+    "featured": false
+  },
+  {
+    "name": "ElevenLabs",
+    "taskCategory": "Audio & Video",
+    "price": "Free to Start",
+    "description": "Create realistic, human-sounding voiceovers. You can read any text aloud, perfect for business videos or listening to articles.",
+    "icon": "https://logo.clearbit.com/elevenlabs.io",
+    "website": "https://elevenlabs.io",
+    "easeOfUse": "Intermediate",
+    "popularity": 85,
+    "featured": false
+  },
+  {
+    "name": "GitHub Copilot",
+    "taskCategory": "For Coders",
+    "price": "Paid",
+    "description": "(For tech users) An AI pair programmer that suggests code and helps you write software faster. (We'll keep one for the techies!)",
+    "icon": "https://logo.clearbit.com/github.com",
+    "website": "https://github.com/features/copilot",
+    "easeOfUse": "Intermediate",
+    "popularity": 90,
+    "featured": false
+  }
+]
