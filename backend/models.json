@@ -86,5 +86,16 @@
     "easeOfUse": "Intermediate",
     "popularity": 90,
     "featured": false
+  },
+  {
+    "name": "NotebookLM",
+    "taskCategory": "Planning & Ideas",
+    "price": "Free to Start",
+    "description": "A research assistant that 'chats' with your personal files. Upload your meeting notes, class lectures, or project plans to instantly summarize them and find answers.",
+    "icon": "https://logo.clearbit.com/google.com",
+    "website": "https://notebooklm.google.com",
+    "easeOfUse": "Beginner",
+    "popularity": 94,
+    "featured": false
   }
 ]
