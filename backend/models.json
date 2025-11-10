@@ -91,11 +91,88 @@
     "name": "NotebookLM",
     "taskCategory": "Planning & Ideas",
     "price": "Free to Start",
-    "description": "A research assistant that 'chats' with your personal files. Upload your meeting notes, class lectures, or project plans to instantly summarize them and find answers.",
+    "description": "A research assistant that 'chats' with your personal files. Upload your meeting notes or project plans to instantly summarize them and find answers.",
     "icon": "https://logo.clearbit.com/google.com",
     "website": "https://notebooklm.google.com",
     "easeOfUse": "Beginner",
     "popularity": 94,
+    "featured": false
+  },
+  {
+    "name": "Freepik",
+    "taskCategory": "Creating Images & Art",
+    "price": "Free to Start",
+    "description": "Find millions of stock photos, icons, and graphics. Also includes an AI image generator for quick, custom art.",
+    "icon": "https://logo.clearbit.com/freepik.com",
+    "website": "https://www.freepik.com",
+    "easeOfUse": "Beginner",
+    "popularity": 96,
+    "featured": false
+  },
+  {
+    "name": "Leonardo AI",
+    "taskCategory": "Creating Images & Art",
+    "price": "Free to Start",
+    "description": "A powerful AI art studio for creating high-quality images, game assets, and creative designs from a text prompt.",
+    "icon": "https://logo.clearbit.com/leonardo.ai",
+    "website": "https://leonardo.ai",
+    "easeOfUse": "Intermediate",
+    "popularity": 92,
+    "featured": false
+  },
+  {
+    "name": "Exactly AI",
+    "taskCategory": "Creating Images & Art",
+    "price": "Free to Start",
+    "description": "A creative tool to generate AI images where your characters stay consistent, like for a storybook or brand.",
+    "icon": "https://logo.clearbit.com/exactly.ai",
+    "website": "https://www.exactly.ai",
+    "easeOfUse": "Intermediate",
+    "popularity": 75,
+    "featured": false
+  },
+  {
+    "name": "Notion",
+    "taskCategory": "Organizing My Life",
+    "price": "Free to Start",
+    "description": "The all-in-one workspace for your notes, tasks, and plans. A powerful digital notebook for home projects or your business.",
+    "icon": "https://logo.clearbit.com/notion.so",
+    "website": "https://www.notion.so",
+    "easeOfUse": "Intermediate",
+    "popularity": 98,
+    "featured": false
+  },
+  {
+    "name": "TinyWow",
+    "taskCategory": "Organizing My Life",
+    "price": "Free",
+    "description": "A huge collection of free, simple tools. Convert PDFs, remove image backgrounds, trim videos, and more, all in one place.",
+    "icon": "https://logo.clearbit.com/tinywow.com",
+    "website": "https://tinywow.com",
+    "easeOfUse": "Beginner",
+    "popularity": 89,
+    "featured": false
+  },
+  {
+    "name": "Napkin",
+    "taskCategory": "Planning & Ideas",
+    "price": "Paid",
+    "description": "A beautiful, simple place to capture your thoughts and ideas. Napkin helps you see connections between your notes.",
+    "icon": "https://logo.clearbit.com/napkin.one",
+    "website": "https://www.napkin.one",
+    "easeOfUse": "Beginner",
+    "popularity": 70,
+    "featured": false
+  },
+  {
+    "name": "Bubble",
+    "taskCategory": "For Coders",
+    "price": "Free to Start",
+    "description": "(For tech users) A powerful 'no-code' tool for building your own web applications and websites from scratch, like a custom app.",
+    "icon": "https://logo.clearbit.com/bubble.io",
+    "website": "https://bubble.io",
+    "easeOfUse": "Intermediate",
+    "popularity": 88,
     "featured": false
   }
 ]
